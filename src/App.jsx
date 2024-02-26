@@ -6,9 +6,17 @@ function App() {
 
   switch (gameState) {
     case "start":
-      return <StartScreen start={() => setGameState("play")} />;
+      return(
+        <section className = "w-full h-screen">
+          <StartScreen start={() => setGameState("play")} />
+        </section>
+      ) 
     case "play":
-      return <PlayScreen end={() => setGameState("start")} />;
+      return(
+        <section className = "w-full h-screen flex justify-center items-center">
+          <PlayScreen end={() => setGameState("start")} />
+        </section>
+      ) 
     default:
       throw new Error("Invalid game state " + gameState);
   }
